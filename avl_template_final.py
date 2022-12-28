@@ -188,12 +188,7 @@ class AVLTreeList(object):
             return None
         # creating a node
         new_node = AVLNode(val)
-        virtual = AVLNode(None)
-        virtual.setHeight(-1)
-        virtual.size = 0
-        new_node.left = (virtual)
-        new_node.right = (virtual)
-        virtual.setParent(new_node)
+        self.virtual_sons(new_node)
 
         if self.empty():
             self.root = new_node
@@ -793,3 +788,4 @@ class AVLTreeList(object):
         node.left = v1
         v1.setParent(node)
         v2.setParent(node)
+

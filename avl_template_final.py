@@ -776,3 +776,20 @@ class AVLTreeList(object):
                 a += 1
                 c += 1
         return result
+
+    """creates two virtual sons for the node received
+        @type node: AVLNode 
+        """
+    def virtual_sons(self, node):
+        #left virtual son
+        v1 = AVLNode(None)
+        v1.setHeight(-1)
+        v1.size = 0
+        # right virtual son
+        v2 = AVLNode(None)
+        v2.setHeight(-1)
+        v2.size = 0
+        node.right = v2
+        node.left = v1
+        v1.setParent(node)
+        v2.setParent(node)

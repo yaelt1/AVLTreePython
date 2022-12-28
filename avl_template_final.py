@@ -581,12 +581,8 @@ class AVLTreeList(object):
             else:
                 node.parent.setLeft(son)
         right = son.right
-
         son.setRight(node)
         node.setLeft(right)
-
-        node.setLeft(node.left)
-        son.setLeft(son.left)
 
         """makes a left rotation
 
@@ -606,9 +602,6 @@ class AVLTreeList(object):
         left = son.left
         son.setLeft(node)
         node.setRight(left)
-
-        son.setRight(son.right)
-        node.setLeft(node.left)
 
         """deletes the given node
 
